@@ -261,7 +261,7 @@ impl Parser {
         loop {
             let key = match self.expect("object key") {
                 Token::StringToken(s) => s.clone(),
-                other => panic!("Expected string but got something else"),
+                _ => panic!("Expected string but got something else"),
             };
 
             match self.expect("colon") {
